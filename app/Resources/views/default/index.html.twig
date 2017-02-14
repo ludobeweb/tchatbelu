@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+        <div id="messages">
+        {% for annonceTchat in sectionTchat %}
+                        <h2>  {{annonceTchat.author}}  </h2>
+                        <p> {{annonceTchat.message}} </p>
+                    {% endfor %}
+        </div>
+    <form method="POST">
+        Pseudo : <input type="text" name="pseudo" id="pseudo" /><br />
+        Message : <textarea name="message" id="message"></textarea><br />
+        <input type="submit" name="submit" value="Envoyez votre message !" id="envoi" />
+    </form>
+    {% endblock %}
